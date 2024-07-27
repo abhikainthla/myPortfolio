@@ -93,3 +93,14 @@
   opacity: 1;
   text-decoration: underline;
 }
+
+.email-light:hover{
+  background-color: transparent;
+  border: 1px solid #455963;
+  color: #455963;
+}
+
+.email-dark:hover {
+  background-color: #455963;
+  
+}

@@ -5,7 +5,7 @@ import React from 'react'
 const Home = () => {
     const { colorMode, toggleColorMode } = useColorMode();
   return (
-    <Flex justifyContent={'center'} alignItems={'center'} gap={45} p={20}>
+    <Flex justifyContent={'center'} alignItems={'center'} gap={45} p={20} h={'100vh'}>
         <Flex flexDir={'column'} gap={20}>
             <Box>
             <Text fontWeight={'bold'} >Hello World!</Text>
