@@ -31,7 +31,7 @@ pdfjs.GlobalWorkerOptions.workerSrc = new URL(
     };
   
     return (
-      <Flex flexDir={'column'} alignItems={'center'} gap={5}>
+      <Flex flexDir={'column'} alignItems={'center'} gap={5} id='resume'>
         <Heading>Resume</Heading>
         <Flex h={800} overflow={'hidden'}>
         <Document file='/my-resume.pdf' onLoadSuccess={onDocumentLoadSuccess}>

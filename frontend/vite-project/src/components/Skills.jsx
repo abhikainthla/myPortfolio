@@ -6,7 +6,7 @@ import { IoIosArrowForward } from "react-icons/io";
 const Skills = () => {
     const { colorMode, toggleColorMode } = useColorMode();
   return (
-    <Flex justifyContent={'center'} flexDir={'column'} alignItems={'center'} gap={7} p={20}>
+    <Flex justifyContent={'center'} flexDir={'column'} alignItems={'center'} gap={7} p={20} id='skills'>
 <div className='hexagon' >
 <Image src='/profile-pic.jpeg' className='profile-pic' />
 </div>

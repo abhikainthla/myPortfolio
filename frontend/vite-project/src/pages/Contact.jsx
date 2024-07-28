@@ -1,9 +1,11 @@
 import { Box, Button, Flex, Heading, Link, Text, useColorMode } from '@chakra-ui/react'
 import React from 'react'
 import { FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa6';
+import useShowToast from '../hooks/useShowToast';
 
 const Contact = () => {
     const { colorMode, toggleColorMode } = useColorMode();
+    const showToast = useShowToast();
 
     const email = 'abhikainthla001@gmail.com'; 
     const socialLinks = [
@@ -13,21 +15,22 @@ const Contact = () => {
     ];
   
     const copyEmailToClipboard = () => {
-      navigator.clipboard.writeText(email);
+        navigator.clipboard.writeText(email);
+        showToast('Email copied to clipboard');
   
     };
   return (
-    <Flex flexDir={'column'} alignItems={'center'} p={20} gap={20}>
+    <Flex flexDir={'column'} alignItems={'center'} p={20} gap={10} id='contact'>
         <Heading>Contact</Heading>
         <Flex flexDir={'column'} alignItems={'center'} gap={10}>
 
         <Flex >
-            <Text fontSize={'2xl'}>Thankyou for visiting my portfolio</Text>
+            <Text fontSize={'3xl'}>Thankyou for visiting my portfolio</Text>
 
         </Flex>
         <Flex flexDir={'column'} gap={5} >
             <Text fontSize={'2xl'}>Like what you see? here is how I can be reached.</Text>
-            <Flex flexDir={'column'} onClick={copyEmailToClipboard} className={colorMode === 'light' ? 'email-light' : 'email-dark' } bg={'blue.800'} color={'#ffffff'} borderRadius={5}>
+            <Flex flexDir={'column'} cursor={'pointer'} onClick={copyEmailToClipboard} className={colorMode === 'light' ? 'email-light' : 'email-dark' } bg={'blue.800'} color={'#ffffff'} borderRadius={5}>
                 <Text textAlign={'center'} fontSize={'18px'} fontWeight={'bold'}>{email}</Text>
                 <Text textAlign={'center'} fontSize={'18px'} >Copy Email</Text>
             </Flex>

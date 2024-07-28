@@ -104,3 +104,12 @@
   background-color: #455963;
   
 }
+
+.blogs:hover .overlay{
+  opacity: 0.8;
+}
+
+.blogs:hover .text {
+  opacity: 1;
+  text-decoration: underline; 
+}

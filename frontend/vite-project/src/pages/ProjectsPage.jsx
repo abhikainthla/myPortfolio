@@ -16,7 +16,7 @@ const ProjectsPage = () => {
     },
     {
       link: "https://github.com/abhikainthla/hospital-management-system",
-      title: "Hospital Managemet System",
+      title: "Hospital Management System",
       description: "This Projects aims to make it easier to make check-up requests, manage patient and doctors records and all of this in an efficient way",
       img: "https://i.ibb.co/0t2Y0Ym/Threads-clone.png",
       lang: "MERN"
@@ -106,7 +106,7 @@ const ProjectsPage = () => {
   const filteredProjects = filter ? projects.filter(item => item.lang === filter) : projects;
 
   return (
-    <Flex p={20} alignItems={'center'} justifyContent={'center'} flexDir={'column'} gap={10}>
+    <Flex p={20} alignItems={'center'} justifyContent={'center'} flexDir={'column'} gap={10} id='projects'>
       <Heading>Projects</Heading>
       <Flex gap={5}>
         {technologies.map((tech, index) => (

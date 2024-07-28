@@ -5,9 +5,9 @@ import React from 'react'
 const Home = () => {
     const { colorMode, toggleColorMode } = useColorMode();
   return (
-    <Flex justifyContent={'center'} alignItems={'center'} gap={45} p={20} h={'100vh'}>
+    <Flex justifyContent={'center'} alignItems={'center'} gap={45} p={20} h={'100vh'} id='home'>
         <Flex flexDir={'column'} gap={20}>
-            <Box>
+            <Box gap={10}>
             <Text fontWeight={'bold'} >Hello World!</Text>
             <Heading size={'2xl'}>
                 I'm a <br/>MERN Stack Developer

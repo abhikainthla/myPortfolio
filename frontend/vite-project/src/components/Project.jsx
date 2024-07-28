@@ -1,20 +1,31 @@
-import { Flex, Box, Image, Link, Text, useColorMode } from '@chakra-ui/react';
+import { Flex, Box, Image, Link, Text, useColorMode, Button } from '@chakra-ui/react';
 import { GoLinkExternal } from "react-icons/go";
-import React from 'react';
+import React, { useState } from 'react';
 
 const Project = (props) => {
   const { colorMode, toggleColorMode } = useColorMode();
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const toggleExpand = () => {
+    setIsExpanded(!isExpanded);
+  };
+
+  const truncatedDescription = props.description.length > 80 
+  ? props.description.substring(0, 80) + '...' 
+  : props.description;
+
+const displayDescription = isExpanded ? props.description : truncatedDescription;
 
   return (
     <Flex className={colorMode ==='dark' ? 'dark-card':'project-card'}  flexDir={'column'}  borderRadius={10} overflow={'hidden'} position={'relative'} gap={5} w={80}>
       <Link href={props.link} textDecor={'none'} isExternal w="100%" h="100%" className='link'>
-        <Box w="100%">
+        <Box w="100%" h={'140px'} overflow={'hidden'}>
           <Image src={props.image} alt={props.title} width="100%" h={'auto'} />
         </Box>
-        <Box w="100%" paddingLeft={5} paddingRight={5} paddingBottom={5}>
-          <Text fontSize={'1.5rem'} fontWeight={'bold'}>{props.title}</Text>
-          <Text>{props.description}</Text>
-        </Box>
+        <Box w="100%" paddingLeft={5} paddingRight={5} paddingBottom={5} h={'140px'} overflow={'hidden'} >
+          <Text fontSize={'1.23rem'} fontWeight={'bold'}>{props.title}</Text>
+          <Text>{displayDescription}</Text>
+          </Box>
         <Flex className='overlay' justifyContent={'center'} alignItems={'center'}>
           <Text className='text'>Visit Link</Text><GoLinkExternal size={25} color='#ffffff' />
         </Flex>
