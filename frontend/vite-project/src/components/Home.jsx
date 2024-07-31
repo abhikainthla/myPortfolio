@@ -1,6 +1,7 @@
 import { Box, Button, Flex, Heading, Image, Link, Text, useColorMode } from '@chakra-ui/react'
 import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa6";
 import React from 'react'
+import ResumeDownloader from './ResumeDownloader';
 
 const Home = () => {
     const { colorMode, toggleColorMode } = useColorMode();
@@ -14,17 +15,17 @@ const Home = () => {
             </Heading>
             <Text fontWeight={'bold'}>Welcome to my Portfolio website</Text>
             </Box>
-            <Box>
-                <Button className={colorMode === 'light' ? 'home-button-light' : 'home-button-dark' } bg={'blue.800'} color={'#ffffff'}>Find more about me</Button>
+            <Box w={200}>
+                <ResumeDownloader/>
             </Box>
             <Flex gap={5}>
-                <Link>
+                <Link href='https://github.com/abhikainthla'>
                 <FaGithub size={35} />
                 </Link>
-            <Link>
+            <Link href='https://www.linkedin.com/in/abhishek-kainthla-321537191/'>
             <FaLinkedin size={35}  />
             </Link>
-            <Link>
+            <Link href='https://www.instagram.com/abhi._.kainthla/'>
             <FaInstagram size={35}  />
             </Link>
             

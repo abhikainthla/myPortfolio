@@ -14,7 +14,7 @@ const ResumeDownloader = () => {
     
       return (
         <Flex flexDir={'column'} >
-               <Buttons name={'Download Resume'} onClick={() => handleDownload()}  />     </Flex>
+               <Buttons name={'Download My Resume'} onClick={() => handleDownload()}  />     </Flex>
       );
 }
 
