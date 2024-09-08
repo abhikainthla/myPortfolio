@@ -1,5 +1,5 @@
 
-import { Flex } from '@chakra-ui/react'
+import { Container, Flex } from '@chakra-ui/react'
 import './App.css'
 import Navbar from './components/Navbar'
 import Contact from './pages/Contact'

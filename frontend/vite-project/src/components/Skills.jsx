@@ -1,10 +1,12 @@
-import { Flex, Heading, Image, Text, useColorMode } from '@chakra-ui/react'
+import { Flex, Heading, Image, Text, useColorMode, useMediaQuery } from '@chakra-ui/react'
 import { FaCss3Alt, FaHtml5, FaNodeJs, FaReact } from "react-icons/fa6";
 import { IoLogoJavascript } from "react-icons/io5";
 import { BiLogoMongodb } from "react-icons/bi";
 import { IoIosArrowForward } from "react-icons/io";
 const Skills = () => {
     const { colorMode, toggleColorMode } = useColorMode();
+    const [isSmallerThan426] = useMediaQuery('(max-width: 426px)');
+
   return (
     <Flex justifyContent={'center'} flexDir={'column'} alignItems={'center'} gap={7} p={20} id='skills'>
 <div className='hexagon' >
@@ -14,7 +16,7 @@ const Skills = () => {
 <IoIosArrowForward size={50} />
 <Heading >Abhishek Kainthla</Heading>
 </Flex>
-<Text w={700}>
+<Text w={isSmallerThan426 ? 'auto': '700'}>
     I am a Full Stack Developer with a passion for building beautiful and functional websites and applications. I
     have a strong background in web development and have experience working with a variety of technologies and
     frameworks. I am always looking for new challenges and opportunities to learn and grow as a developer.
