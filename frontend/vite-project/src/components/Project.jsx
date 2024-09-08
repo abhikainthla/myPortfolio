@@ -1,10 +1,12 @@
-import { Flex, Box, Image, Link, Text, useColorMode, Button } from '@chakra-ui/react';
+import { Flex, Box, Image, Link, Text, useColorMode, Button, useMediaQuery } from '@chakra-ui/react';
 import { GoLinkExternal } from "react-icons/go";
 import React, { useState } from 'react';
 
 const Project = (props) => {
   const { colorMode, toggleColorMode } = useColorMode();
   const [isExpanded, setIsExpanded] = useState(false);
+  const [isSmallerThan426] = useMediaQuery('(max-width: 426px)');
+
 
   const toggleExpand = () => {
     setIsExpanded(!isExpanded);

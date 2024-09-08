@@ -8,7 +8,7 @@ const Skills = () => {
     const [isSmallerThan426] = useMediaQuery('(max-width: 426px)');
 
   return (
-    <Flex justifyContent={'center'} flexDir={'column'} alignItems={'center'} gap={7} p={20} id='skills'>
+    <Flex justifyContent={'center'} flexDir={'column'} alignItems={'center'} gap={7} p={isSmallerThan426 ? '10':'20'} id='skills'>
 <div className='hexagon' >
 <Image src='/profile-pic.jpeg' className='profile-pic' />
 </div>
@@ -22,29 +22,29 @@ const Skills = () => {
     frameworks. I am always looking for new challenges and opportunities to learn and grow as a developer.
 </Text>
 <Heading>Skills</Heading>
-<Flex flexWrap={'wrap'} gap={20} alignItems={'center'} justifyContent={'center'}>
-    <Flex flexDir={'column'} alignItems={'center'} gap={3}>
-    <FaReact size={75} color='#28a9e1'/>
-    <Text fontWeight={'bold'}>React.js</Text>
+<Flex flexWrap={'wrap'} gap={isSmallerThan426 ? '10':'20'} alignItems={'center'} justifyContent={'center'}>
+    <Flex flexDir={'column'} alignItems={'center'} gap={isSmallerThan426 ? '2':'3'} >
+    <FaReact size={isSmallerThan426 ? '50' : '75'} color='#28a9e1'/>
+    <Text fontWeight={'bold'} >React.js</Text>
     </Flex>
-<Flex flexDir={'column'} alignItems={'center'} gap={3}>
-<IoLogoJavascript size={75} color='#e7a021' />
-<Text fontWeight={'bold'}>JavaScript</Text>
+<Flex flexDir={'column'} alignItems={'center'} gap={isSmallerThan426 ? '2':'3'}>
+<IoLogoJavascript size={isSmallerThan426 ? '50' : '75'} color='#e7a021' />
+<Text fontWeight={'bold'} >JavaScript</Text>
 </Flex>
-<Flex flexDir={'column'} alignItems={'center'} gap={3}>
-<FaHtml5 size={75} color='#e44f25' />
+<Flex flexDir={'column'} alignItems={'center'} gap={isSmallerThan426 ? '2':'3'}>
+<FaHtml5 size={isSmallerThan426 ? '50' : '75'} color='#e44f25' />
 <Text fontWeight={'bold'}>HTML</Text>
 </Flex>
-<Flex flexDir={'column'} alignItems={'center'} gap={3}>
-<FaCss3Alt size={75} color='#0c73b8' />
+<Flex flexDir={'column'} alignItems={'center'} gap={isSmallerThan426 ? '2':'3'}>
+<FaCss3Alt size={isSmallerThan426 ? '50' : '75'} color='#0c73b8' />
 <Text fontWeight={'bold'}>CSS</Text>
 </Flex>
-<Flex flexDir={'column'} alignItems={'center'} gap={3}>
-<FaNodeJs size={75} color='#419d5f' />
+<Flex flexDir={'column'} alignItems={'center'} gap={isSmallerThan426 ? '2':'3'}>
+<FaNodeJs size={isSmallerThan426 ? '50' : '75'} color='#419d5f' />
 <Text fontWeight={'bold'}>Node.js</Text>
 </Flex>
-<Flex flexDir={'column'} alignItems={'center'} gap={3}>
-<BiLogoMongodb size={75} color='#51aa42' />
+<Flex flexDir={'column'} alignItems={'center'} gap={isSmallerThan426 ? '2':'3'}>
+<BiLogoMongodb size={isSmallerThan426 ? '50' : '75'} color='#51aa42' />
 <Text fontWeight={'bold'}>MongoDB</Text>
 </Flex>
 </Flex>

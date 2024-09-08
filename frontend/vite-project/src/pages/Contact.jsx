@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Heading, Link, Text, useColorMode } from '@chakra-ui/react'
+import { Box, Button, Flex, Heading, Link, Text, useColorMode, useMediaQuery } from '@chakra-ui/react'
 import React from 'react'
 import { FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa6';
 import useShowToast from '../hooks/useShowToast';
@@ -6,6 +6,8 @@ import useShowToast from '../hooks/useShowToast';
 const Contact = () => {
     const { colorMode, toggleColorMode } = useColorMode();
     const showToast = useShowToast();
+    const [isSmallerThan426] = useMediaQuery('(max-width: 426px)');
+
 
     const email = 'abhikainthla001@gmail.com'; 
     const socialLinks = [
@@ -20,7 +22,7 @@ const Contact = () => {
   
     };
   return (
-    <Flex flexDir={'column'} alignItems={'center'} p={20} gap={10} id='contact'>
+    <Flex flexDir={'column'} alignItems={'center'} p={isSmallerThan426 ? '10':'20'} gap={10} id='contact'>
         <Heading>Contact</Heading>
         <Flex flexDir={'column'} alignItems={'center'} gap={10}>
 
@@ -36,7 +38,7 @@ const Contact = () => {
             </Flex>
         </Flex>
         <Flex flexDir={'column'} alignItems={'center'} gap={5}>
-            <Text fontSize={'2xl'}>Hit Me Up  On Social Media!</Text>
+            <Text fontSize={isSmallerThan426 ? '1l' : '2xl'}>Hit Me Up  On Social Media!</Text>
             <Flex  gap={5}>
   {socialLinks.map((item, index) => (
     <Box key={index}>

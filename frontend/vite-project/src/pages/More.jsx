@@ -1,4 +1,4 @@
-import { Flex, Heading } from '@chakra-ui/react'
+import { Flex, Heading, useMediaQuery } from '@chakra-ui/react'
 import React, { useState } from 'react'
 import ReactSimplyCarousel from 'react-simply-carousel';
 import Blogs from '../components/Blogs';
@@ -6,6 +6,7 @@ import { MdArrowBackIos, MdArrowForwardIos } from "react-icons/md";
 
 const More = () => {
   const [activeSlideIndex, setActiveSlideIndex] = useState(0);
+  const [isSmallerThan426] = useMediaQuery('(max-width: 426px)');
   const blogs = [
     {
       title: "Enhancing React App Performance With “useCallback” Hook.",
@@ -41,7 +42,7 @@ const More = () => {
     }
   ];
   return (
-    <Flex alignItems={'center'} flexDir={'column'} p={20} gap={10} id='more'>
+    <Flex alignItems={'center'} flexDir={'column'} p={isSmallerThan426 ? '0':'20'} paddingTop={isSmallerThan426?"10":"0"} gap={isSmallerThan426 ? '5': '10'} id='more'>
         <Heading>More</Heading>
         <div>
       <ReactSimplyCarousel
@@ -64,7 +65,7 @@ const More = () => {
             textAlign: 'center',
             width: 30,
           },
-          children: <span><MdArrowForwardIos style={{marginLeft:"5px"}}/></span>,
+          children: <span ><MdArrowForwardIos style={{marginLeft:"5px"}}/></span>,
         }}
         backwardBtnProps={{
           //here you can also pass className, or any other button element attributes

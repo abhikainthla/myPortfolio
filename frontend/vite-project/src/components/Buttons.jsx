@@ -1,7 +1,8 @@
 import React from "react";
-import { Button, useColorMode } from "@chakra-ui/react";
+import { Button, useColorMode, useMediaQuery } from "@chakra-ui/react";
 const Buttons = (props) => {
   const { colorMode, toggleColorMode } = useColorMode();
+  const [isSmallerThan426] = useMediaQuery('(max-width: 426px)');
   return (
     <>
       <Button

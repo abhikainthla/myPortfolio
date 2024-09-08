@@ -1,24 +1,26 @@
-import { Flex, Heading } from '@chakra-ui/react';
+import { Flex, Heading, useMediaQuery } from '@chakra-ui/react';
 import React, { useState } from 'react';
 import Buttons from '../components/Buttons';
 import Project from '../components/Project';
 
 const ProjectsPage = () => {
   const [filter, setFilter] = useState(null);
+  const [isSmallerThan426] = useMediaQuery('(max-width: 426px)');
+
 
   const projects = [
     {
       link: "https://github.com/abhikainthla/Threads-Clone",
       title: "Threads-clone",
       description: "This project is a clone of the popular Threads website, built using the MERN stack (MongoDB, Express.js, React.js, Node.js). Threads is a platform where users can create, discover, and engage in threaded discussions on various topics.",
-      img: "https://i.ibb.co/0t2Y0Ym/Threads-clone.png",
+      img: "/threads.jpeg",
       lang: "MERN"
     },
     {
       link: "https://github.com/abhikainthla/hospital-management-system",
       title: "Hospital Management System",
       description: "This Projects aims to make it easier to make check-up requests, manage patient and doctors records and all of this in an efficient way",
-      img: "https://i.ibb.co/0t2Y0Ym/Threads-clone.png",
+      img: "/Screenshot (9).png",
       lang: "MERN"
     },
     {
@@ -106,9 +108,9 @@ const ProjectsPage = () => {
   const filteredProjects = filter ? projects.filter(item => item.lang === filter) : projects;
 
   return (
-    <Flex p={20} alignItems={'center'} justifyContent={'center'} flexDir={'column'} gap={10} id='projects'>
+    <Flex p={isSmallerThan426 ? '10':'20'} alignItems={'center'} justifyContent={'center'} flexDir={'column'} gap={isSmallerThan426 ? '5' : '10'} id='projects'>
       <Heading>Projects</Heading>
-      <Flex gap={5}>
+      <Flex gap={isSmallerThan426 ? '2' : '5'} flexWrap={isSmallerThan426 ? 'wrap' : 'nowrap'}>
         {technologies.map((tech, index) => (
           <Buttons key={index} name={tech} onClick={() => handleFilter(tech)} />
         ))}

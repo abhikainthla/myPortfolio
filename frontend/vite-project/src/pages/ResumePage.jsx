@@ -1,4 +1,4 @@
-import { Button, Flex, Heading, Text, useColorMode } from '@chakra-ui/react';
+import { Button, Flex, Heading, Text, useColorMode, useMediaQuery } from '@chakra-ui/react';
 import React, { useState } from 'react'
 import { Document, Page, pdfjs } from 'react-pdf';
 import ResumeDownloader from '../components/ResumeDownloader';
@@ -13,6 +13,8 @@ pdfjs.GlobalWorkerOptions.workerSrc = new URL(
 
     const [numPages, setNumPages] = useState(null);
     const [pageNumber, setPageNumber] = useState(1);
+    const [isSmallerThan426] = useMediaQuery('(max-width: 426px)');
+
   
     function onDocumentLoadSuccess({ numPages }) {
       setNumPages(numPages);
@@ -33,7 +35,7 @@ pdfjs.GlobalWorkerOptions.workerSrc = new URL(
     return (
       <Flex flexDir={'column'} alignItems={'center'} gap={5} id='resume'>
         <Heading>Resume</Heading>
-        <Flex h={800} overflow={'hidden'}>
+        <Flex h={800} maxW={isSmallerThan426 ? "90vw": "auto"} overflowY={'hidden'}>
         <Document file='/my-resume.pdf' onLoadSuccess={onDocumentLoadSuccess}>
           <Page pageNumber={pageNumber} />
         </Document>
