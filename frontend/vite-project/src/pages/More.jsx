@@ -42,7 +42,7 @@ const More = () => {
     }
   ];
   return (
-    <Flex alignItems={'center'} flexDir={'column'} p={isSmallerThan426 ? '0':'20'} paddingTop={isSmallerThan426?"10":"0"} gap={isSmallerThan426 ? '5': '10'} id='more'>
+    <Flex alignItems={'center'} flexDir={'column'} p={isSmallerThan426 ? '0':'20px'} paddingTop={isSmallerThan426?"10":"0"} gap={isSmallerThan426 ? '5px': '10px'} id='more'>
         <Heading>More</Heading>
         <div>
       <ReactSimplyCarousel
