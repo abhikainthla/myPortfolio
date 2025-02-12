@@ -1,25 +1,19 @@
 
 import { Container, Flex } from '@chakra-ui/react'
 import './App.css'
-import Navbar from './components/Navbar'
-import Contact from './pages/Contact'
-import HomePage from './pages/HomePage'
-import More from './pages/More'
-import ProjectsPage from './pages/ProjectsPage'
-import ResumePage from './pages/ResumePage'
-import SkillsPage from './pages/SkillsPage'
+import UserPage from './pages/UserPage'
+import { Route, Routes } from 'react-router-dom'
+import AdminPage from './pages/AdminPage'
 
 function App() {
 
   return (
     <>
-    <Navbar/>
-    <HomePage/>
-    <SkillsPage/>
-    <ProjectsPage/>
-    <ResumePage/>
-    <More/>
-    <Contact/>
+    <Routes>
+      <Route path="/" element={ <UserPage/>} />
+      <Route path="/admin" element={ <AdminPage/>} />
+    </Routes>
+  
     </>
   )
 }
